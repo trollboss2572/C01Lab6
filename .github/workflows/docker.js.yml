@@ -26,7 +26,7 @@ jobs:
         run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/quirknotes_backend:latest -f Dockerfile_backend .
 
       - name: Push Docker backend and MongoDB up
-        run: docker-compose up
+        run: docker-compose up -d
         
       - name: Push Docker frontend image to Docker Hub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/quirknotes_frontend:latest
